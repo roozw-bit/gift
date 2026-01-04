@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>🤍</title>
+<style>
+body {
+margin:0;height:100vh;
+background:linear-gradient(180deg,#f3ede4,#e6d6c3);
+display:flex;align-items:center;justify-content:center;
+font-family:Tahoma;text-align:center;overflow:hidden;
+}
+#card {
+background:#fffaf4;padding:30px;border-radius:22px;
+box-shadow:0 10px 30px rgba(0,0,0,.12)
+}
+button {
+background:#c9a97c;color:#fff;border:none;
+padding:14px 30px;font-size:18px;
+border-radius:30px;cursor:pointer
+}
+img {max-width:300px;border-radius:20px;display:none;margin-top:20px}
+.confetti {
+position:absolute;width:10px;height:10px;
+animation:fall 2.2s linear forwards
+}
+@keyframes fall {
+to {transform:translateY(600px) rotate(360deg);opacity:0}
+}
+</style>
+</head>
+<body>
+
+<div id="card">
+<h2>حابة أشاركك بفرحتي<br>لأنك الأقرب لقلبي 🤍</h2>
+<button onclick="reveal()">اضغطي هنا ✨</button>
+<img id="photo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...(الصورة مدموجة بالكامل)...">
+<iframe id="song" width="0" height="0"
+src="https://www.youtube.com/embed/TVwOZ_2hf2U?autoplay=1">
+</iframe>
+</div>
+
+<script>
+function reveal(){
+document.getElementById("photo").style.display="block";
+document.getElementById("song").style.display="block";
+for(let i=0;i<45;i++){
+let c=document.createElement("div");
+c.className="confetti";
+c.style.left=Math.random()*100+"vw";
+c.style.background=["#e6d6c3","#c9a97c","#fff"][Math.floor(Math.random()*3)];
+document.body.appendChild(c);
+}
+}
+</script>
+
+</body>
+</html>
